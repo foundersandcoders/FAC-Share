@@ -1,0 +1,42 @@
+{
+  "name": "fac-share",
+  "version": "1.0.0",
+  "description": "A knowledge exchange platform for FACers",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "start:watch": "nodemon src/server.js",
+    "coverage": "istanbul cover tests/*.tests.js",
+    "test": "NODE_ENV=test tape tests/*.tests.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azayneeva/FAC-Share.git"
+  },
+  "author": "Abdullah and Alina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azayneeva/FAC-Share/issues"
+  },
+  "homepage": "https://github.com/azayneeva/FAC-Share#readme",
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "nodemon": "^1.12.0",
+    "supertest": "^3.0.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0",
+    "travis": "^0.1.1"
+  },
+  "dependencies": {
+    "env2": "^2.2.0",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "path": "^0.12.7",
+    "pg": "^7.3.0",
+    "serve-favicon": "^2.4.3",
+    "url": "^0.11.0"
+  }
+}
