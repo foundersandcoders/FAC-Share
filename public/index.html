@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>FAC-Share</title>
+    <link rel="stylesheet" href="style.css" media="screen">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+    <header>
+      <h1>FAC Share</h1>
+    </header>
+    <section id="addResource">
+      <h2>Add a resource:</h2>
+      <form id="addForm" method="post" action="/add-resource">
+        <label for="url">URL:</label>
+        <input id="url" name="url" type="text"><br>
+        <label for="title">Title:</label>
+        <input id="title" name="title" type="text"></br>
+        <button type="submit">Add a resource</button>
+      </form>
+    </section>
+
+    <section id="resourceDB">
+    </section>
+
+    <script src="main.js" type="text/javascript"></script>
+
+  </body>
+</html>
