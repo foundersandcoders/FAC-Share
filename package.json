@@ -10,7 +10,7 @@
     "start": "node src/server.js",
     "start:watch": "nodemon src/server.js",
     "coverage": "istanbul cover tests/*.tests.js",
-    "test": "NODE_ENV=test tape tests/*.tests.js | tap-spec"
+    "test": "tape tests/*.tests.js | tap-spec"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,12 @@
   },
   "homepage": "https://github.com/azayneeva/FAC-Share#readme",
   "devDependencies": {
+    "eslint": "^4.6.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
     "istanbul": "^0.4.5",
     "nodemon": "^1.12.0",
     "supertest": "^3.0.0",
