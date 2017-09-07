@@ -1,7 +1,7 @@
 const ifUrlExists = (url, dbConnection, cb) => {
   dbConnection.query(`SELECT * FROM resources WHERE url='${url}' LIMIT 1`, (err, res) => {
     if (err) {
-      console.log("Problem with the database")
+      console.log("Problem with the database", err)
     }
     else {
       console.log("I am res.rowCount ", res.rowCount)
