@@ -11,6 +11,7 @@ const postData = require('./queries/postData.js');
 const getData = require('./queries/getData.js');
 const querystring = require('querystring');
 const dbConnection = require('./database/dbConnection.js');
+const sanitizeUrl = require('./sanitizeUrl');
 
 
 router.post('/add-resource', (req, res) => {
@@ -23,7 +24,9 @@ router.post('/add-resource', (req, res) => {
   console.log("url: " + url);
   console.log("title: " + title);
 
-  postData(url, title, dbConnection, (err, res) => {
+  const sanitizedUrl = sanitizeUrl(url);
+
+  postData(sanitizedUrl, title, dbConnection, (err, res) => {
     if (err) {
       console.log('error');
     } else {
