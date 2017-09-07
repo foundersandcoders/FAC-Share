@@ -2,6 +2,36 @@ var url = document.getElementById('url');
 var title = document.getElementById('title');
 var submit = document.getElementById('submit');
 
+(function() {
+  xhrRequest('/get-resource', renderDom);
+
+  function xhrRequest(url, cb) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        var data = JSON.parse(xhr.responseText);
+        cb(data);
+      }
+    }
+    xhr.open('GET', url, true);
+    xhr.send();
+  }
+
+  function renderDom(data) {
+    console.log("I am data ", data)
+    var section = document.getElementById('resourceDB')
+    data.forEach(function(item) {
+      var point = document.createElement("li");
+      var newAnchor = document.createElement("a");
+      newAnchor.textContent = item.title;
+      newAnchor.setAttribute('href', item.url);
+      point.appendChild(newAnchor);
+      section.appendChild(point);
+    })
+  }
+
+})()
+
 submit.addEventListener('click', function(e) {
   e.preventDefault();
   console.log('clicked!');
@@ -9,7 +39,7 @@ submit.addEventListener('click', function(e) {
   var urlValue = url.value;
   var theTitle = title.value;
 
-  var finalUrl = '/add-resource' + '?' + 'url=' + urlValue +'&title=' + theTitle;
+  var finalUrl = '/add-resource' + '?' + 'url=' + urlValue + '&title=' + theTitle;
 
   // '/add-resource?url=ndsjkfbnjksdbf&title=jsdnbfjksdbfkjsd
   httpRequest(finalUrl, 'POST', function() {

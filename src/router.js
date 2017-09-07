@@ -44,4 +44,20 @@ router.post('/add-resource', (req, res) => {
   // console.log('add resource hello!');
 });
 
+router.get('/get-resource', (req, response) => {
+  getData(dbConnection, (err, res) => {
+    if (err) {
+      console.log('error with getData in router')
+    } else {
+      console.log('success with getData in router')
+      let output = JSON.stringify(res);
+      console.log("i am output ", output);
+      response.writeHead(200, {
+        'content-type': 'application/json'
+      });
+      response.end(output);
+    }
+  })
+})
+
 module.exports = router;
