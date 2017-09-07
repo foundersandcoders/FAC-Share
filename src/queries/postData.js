@@ -1,16 +1,14 @@
 const ifUrlExists = (url, dbConnection, cb) => {
-  dbConnection.query(`SELECT COUNT (*) FROM resources WHERE url='${url}'`, (err, res) => {
+  dbConnection.query(`SELECT * FROM resources WHERE url='${url}' LIMIT 1`, (err, res) => {
     if (err) {
       console.log("Problem with the database")
-      cb(false)
     }
     else {
-      console.log(res.rows)
-      console.log(JSON.stringify(res.rows).includes("0"))
-      if (JSON.stringify(res.rows).includes("0")) {
-        cb(false);
-      } else {
+      console.log("I am res.rowCount ", res.rowCount)
+      if (res.rowCount > 0) {
         cb(true);
+      } else {
+        cb(false);
       }
     }
   })
