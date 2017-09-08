@@ -7,8 +7,8 @@
     "test": "tests"
   },
   "scripts": {
-    "start": "node src/server.js",
-    "start:watch": "nodemon src/server.js",
+    "start": "node src/index.js",
+    "start:watch": "nodemon src/index.js",
     "coverage": "istanbul cover tests/*.tests.js",
     "test": "NODE_ENV=test tape tests/*.tests.js | tap-spec"
   },
