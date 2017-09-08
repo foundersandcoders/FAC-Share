@@ -25,8 +25,12 @@ var submit = document.getElementById('submit');
       var newAnchor = document.createElement("a");
       newAnchor.textContent = item.title;
       newAnchor.setAttribute('href', item.url);
+      var keywords = document.createElement("p");
+      keywords.textContent = item.keywords;
       point.appendChild(newAnchor);
+      point.appendChild(keywords);
       section.appendChild(point);
+
     })
   }
 
