@@ -20,21 +20,20 @@ router.get('/get-resource', (req, response) => {
 })
 
 router.post('/add-resource', (req, res) => {
-  const reqUrl = req.url;
-  console.log("querystring parse", querystring.parse(reqUrl));
-
-  const url = querystring.parse(reqUrl)['/add-resource?url'];
-  const title = querystring.parse(reqUrl).title;
-  const sanitizedUrl = sanitizeUrl(url);
+  const sanitizedUrl = sanitizeUrl(req.body.url);
 
   ifUrlExists(sanitizedUrl)
   .then(response => {
     if (response.rowCount > 0) throw new Error('URL already exists')
     else {
-      postData(sanitizedUrl, title)
+      postData(sanitizedUrl, req.body.title)
     }
   })
-  .then(console.log('success'))
+  .then( ()=> {
+    console.log('success');
+    res.redirect('/');
+  }
+  )
   .catch(err => {
     console.log("problem with the database: ", err)
   })
