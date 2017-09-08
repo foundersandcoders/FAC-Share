@@ -1,11 +1,7 @@
-const getData = (dbConnection, cb) => {
-  dbConnection.query(`SELECT * FROM resources`, (err, res) => {
-    if(err) {
-      cb(err)
-    } else {
-      cb(null, res.rows)
-    }
-  })
+const dbConnection = require('../database/dbConnection.js');
+
+const getData = () => {
+  return dbConnection.query(`SELECT * FROM resources`)
 }
 
 module.exports = getData;
