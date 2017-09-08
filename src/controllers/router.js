@@ -26,7 +26,7 @@ router.post('/add-resource', (req, res) => {
   .then(response => {
     if (response.rowCount > 0) throw new Error('URL already exists')
     else {
-      postData(sanitizedUrl, req.body.title)
+      postData(sanitizedUrl, req.body.title, req.body.keywords)
     }
   })
   .then( ()=> {

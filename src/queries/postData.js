@@ -5,7 +5,7 @@ const ifUrlExists = (url) => {
 }
 
 const postData = (url, title) => {
-  return (dbConnection.query(`INSERT INTO resources (url, title) VALUES ($1, $2)`, [url, title]))
+  return (dbConnection.query(`INSERT INTO resources (url, title, keywords) VALUES ($1, $2, $3)`, [url, title, keywords]))
 }
 
 module.exports = {postData, ifUrlExists};
