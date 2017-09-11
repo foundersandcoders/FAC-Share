@@ -13,8 +13,20 @@
     <header>
       <h1>FAC Share</h1>
     </header>
+    <section id="search">
+      <form id="searchform" action="/search">
+        <input id="searchinput" placeholder="search everything" type="text" name="searchinput">
+        <button id="submitsearch" type="submit">Search</button>
+      </form>
+    </section>
+
+    <section id="searchResults">
+
+    </section>
+
     <section id="addResource">
       <h2>Add a resource:</h2>
+
       <form id="addForm" action="/add-resource" method="POST">
         <label for="url">URL:</label>
         <input id="url" name="url" type="text"><br>
@@ -31,6 +43,7 @@
     </section>
 
     <script src="main.js" type="text/javascript"></script>
+
 
   </body>
 </html>
