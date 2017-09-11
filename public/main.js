@@ -23,7 +23,7 @@ var submit = document.getElementById('submit');
       var point = document.createElement("li");
       var newAnchor = document.createElement("a");
       newAnchor.textContent = item.title;
-      newAnchor.setAttribute('href', item.url);
+      newAnchor.setAttribute('href', 'http://www.' + item.url);
       var keywords = document.createElement("p");
       keywords.textContent = item.keywords;
       point.appendChild(newAnchor);
