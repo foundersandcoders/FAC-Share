@@ -1,6 +1,7 @@
 const dbConnection = require('../database/dbConnection.js');
 
 const ifUrlExists = (url) => {
+    console.log('ifUrlExists: ',  url);
    return dbConnection.query(`SELECT * FROM resources WHERE url=$1 LIMIT 1`, [url]);
 }
 

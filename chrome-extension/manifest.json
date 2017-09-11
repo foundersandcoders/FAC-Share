@@ -8,7 +8,7 @@
     },
     "permissions": [
      "activeTab",
-     "http://fac-share.herokuapp.com"
+     "https://fac-share.herokuapp.com"
    ],
    "background": {
        "persistent": false,

@@ -1,10 +1,10 @@
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    
+
     var url = request.url;
     var title = request.title;
 
-    var finalUrl = 'https://fac-share.herokuapp.com/add-resource' + '?' + 'url=' + url + '&title=' + title;
+    var finalUrl = 'https://fac-share.herokuapp.com/add-resource-ext' + '?' + 'url=' + url + '&title=' + title;
 
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
