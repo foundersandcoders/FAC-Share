@@ -57,6 +57,14 @@ router.post('/add-resource', (req, res) => {
     .catch(err => {
       console.log("problem with the database: ", err)
 
+const getresources = require('./getresources');
+const addresources = require('./addresources');
+
+router.get('/get-resource', getresources);
+
+router.post('/add-resource', addresources);
+
+
     });
 })
 
