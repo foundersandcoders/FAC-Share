@@ -5,39 +5,12 @@ const getData = require('../queries/getData.js');
 const querystring = require('querystring');
 const sanitizeUrl = require('./sanitizeUrl');
 
-router.get('/get-resource', (req, response) => {
-  getData()
-    .then(res => {
-        let output = JSON.stringify(res.rows);
-        response.writeHead(200, {
-          'content-type': 'application/json'
-        });
-        response.end(output);
-      })
-      .catch(err => {
-        console.log('error with getData in router');
-      })
-})
+const getresources = require('./getresources');
+const addresources = require('./addresources');
 
-router.post('/add-resource', (req, res) => {
-  const sanitizedUrl = sanitizeUrl(req.body.url);
+router.get('/get-resource', getresources);
 
-  ifUrlExists(sanitizedUrl)
-  .then(response => {
-    if (response.rowCount > 0) throw new Error('URL already exists')
-    else {
-      postData(sanitizedUrl, req.body.title)
-    }
-  })
-  .then( ()=> {
-    console.log('success');
-    res.redirect('/');
-  }
-  )
-  .catch(err => {
-    console.log("problem with the database: ", err)
-  })
-});
+router.post('/add-resource', addresources);
 
 
 module.exports = router;
