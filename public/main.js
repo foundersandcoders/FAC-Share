@@ -18,7 +18,6 @@ var submit = document.getElementById('submit');
   }
 
   function renderDom(data) {
-    console.log("I am data ", data)
     var section = document.getElementById('resourceDB')
     data.forEach(function(item) {
       var point = document.createElement("li");
@@ -30,70 +29,40 @@ var submit = document.getElementById('submit');
       point.appendChild(newAnchor);
       point.appendChild(keywords);
       section.appendChild(point);
-
     })
   }
 
 })()
 
-// document.getElementById('searchform').addEventListener("submit", function(event) {
-//   event.preventDefault();
-//   var searchquery = document.getElementById("searchinput").value;
-//   console.log("searchquery from index.html:  ", searchquery);
-//   var url = "/search";
-//   getApi(url, renderDom);
-// })
-//
-// function getApi(url, cb) {
-//   var xhr = new XMLHttpRequest();
-//   xhr.onreadystatechange = function() {
-//     if(xhr.readyState == 4 && xhr.status == 200) {
-//       var data = JSON.parse(xhr.responseText);
-//       cb(data);
-//     }
-//   }
-//   xhr.open('GET', url, true);
-//   xhr.send();
-// }
-//
-// function renderDom(data) {
-//   console.log("I am data ", data)
-//   var section = document.getElementById('resourceDB')
-//   data.forEach(function(item) {
-//     var point = document.createElement("li");
-//     var newAnchor = document.createElement("a");
-//     newAnchor.textContent = item.title;
-//     newAnchor.setAttribute('href', item.url);
-//     var keywords = document.createElement("p");
-//     keywords.textContent = item.keywords;
-//     point.appendChild(newAnchor);
-//     point.appendChild(keywords);
-//     section.appendChild(point);
-//
-//   })
-// }
+document.getElementById('searchform').addEventListener("submit", function(event) {
+  event.preventDefault();
+  var searchquery = document.getElementById("searchinput").value;
+  console.log("I am searchquery:  ", searchquery);
+  var url = "/search" + "?" + searchquery;
+  httpRequest(url, "GET", renderSearchResults);
+})
 
-
-// submit.addEventListener('click', function(e) {
-//   e.preventDefault();
-//   console.log('clicked!');
-//
-//   var urlValue = url.value;
-//   var theTitle = title.value;
-//
-//   var finalUrl = '/add-resource' + '?' + 'url=' + urlValue + '&title=' + theTitle;
-//
-//   // '/add-resource?url=ndsjkfbnjksdbf&title=jsdnbfjksdbfkjsd
-//   httpRequest(finalUrl, 'POST', function() {
-//     console.log('done');
-//   })
-// })
+function renderSearchResults(data) {
+  var section = document.getElementById('searchResults')
+  data.forEach(function(item) {
+    var point = document.createElement("li");
+    var newAnchor = document.createElement("a");
+    newAnchor.textContent = item.title;
+    newAnchor.setAttribute('href', item.url);
+    var keywords = document.createElement("p");
+    keywords.textContent = item.keywords;
+    point.appendChild(newAnchor);
+    point.appendChild(keywords);
+    section.appendChild(point);
+  })
+}
 
 var httpRequest = function(url, type, cb) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
-      cb(null, xhr.responseText);
+      var data = JSON.parse(xhr.responseText);
+      cb(data);
     } else {
       cb('error ' + xhr.responseType);
     }
