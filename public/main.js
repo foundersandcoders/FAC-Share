@@ -35,16 +35,39 @@ var submit = document.getElementById('submit');
   }
 
 })()
-
-var httpRequest = function(url, type, cb) {
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      cb(null, xhr.responseText);
-    } else {
-      cb('error ' + xhr.responseType);
-    }
-  }
-  xhr.open(type, url, true);
-  xhr.send();
-}
+// document.getElementById('searchform').addEventListener("submit", function(event) {
+//   event.preventDefault();
+//   var searchquery = document.getElementById("searchinput").value;
+//   console.log("searchquery from index.html:  ", searchquery);
+//   var url = "/search";
+//   getApi(url, renderDom);
+// })
+//
+// function getApi(url, cb) {
+//   var xhr = new XMLHttpRequest();
+//   xhr.onreadystatechange = function() {
+//     if(xhr.readyState == 4 && xhr.status == 200) {
+//       var data = JSON.parse(xhr.responseText);
+//       cb(data);
+//     }
+//   }
+//   xhr.open('GET', url, true);
+//   xhr.send();
+// }
+//
+// function renderDom(data) {
+//   console.log("I am data ", data)
+//   var section = document.getElementById('resourceDB')
+//   data.forEach(function(item) {
+//     var point = document.createElement("li");
+//     var newAnchor = document.createElement("a");
+//     newAnchor.textContent = item.title;
+//     newAnchor.setAttribute('href', item.url);
+//     var keywords = document.createElement("p");
+//     keywords.textContent = item.keywords;
+//     point.appendChild(newAnchor);
+//     point.appendChild(keywords);
+//     section.appendChild(point);
+//
+//   })
+// }

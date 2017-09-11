@@ -14,7 +14,7 @@
       <h1>FAC Share</h1>
     </header>
     <section id="search">
-      <form id="searchform" action="/search" method="POST">
+      <form id="searchform" action="/search">
         <input id="searchinput" placeholder="search everything" type="text" name="searchinput">
         <button id="submitsearch" type="submit">Search</button>
       </form>
@@ -37,7 +37,18 @@
 
     </section>
 
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.2.24/jquery.autocomplete.min.js"></script>
+
     <script src="main.js" type="text/javascript"></script>
+
+    <script>
+      $('#keywords').autocomplete({
+         width: $('#keywords').width(),
+         delimiter: /(,|;)\s*/,
+         serviceUrl: '/keywords-suggestions',
+      });
+    </script>
 
   </body>
 </html>
