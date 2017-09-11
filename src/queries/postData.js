@@ -4,7 +4,7 @@ const ifUrlExists = (url) => {
    return dbConnection.query(`SELECT * FROM resources WHERE url=$1 LIMIT 1`, [url]);
 }
 
-const postData = (url, title) => {
+const postData = (url, title, keywords) => {
   return (dbConnection.query(`INSERT INTO resources (url, title, keywords) VALUES ($1, $2, $3)`, [url, title, keywords]))
 }
 
