@@ -6,6 +6,7 @@ const search = require('./search');
 const addresources = require('./addresources');
 const addresourcesext = require('./addresourcesext');
 
+router.get('/', home);
 router.get('/get-resource', getresources);
 router.get('/search', search);
 router.post('/add-resource-ext', addresourcesext, addresources);
