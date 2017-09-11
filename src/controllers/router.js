@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const {postData, ifUrlExists} = require('../queries/postData.js');
 const getData = require('../queries/getData.js');
-const getKeywords = require('../queries/getKeywords.js');
 const searchData = require('../queries/searchData.js');
 const querystring = require('querystring');
 const sanitizeUrl = require('./sanitizeUrl');
@@ -38,38 +37,6 @@ router.get('/search', (req, response) => {
   // })
 });
 
-router.get('/keywords-suggestions', (req, res) => {
-  console.log("keywords ", req.query.query);
-  const searchKeyword = req.query.query
-
-  getKeywords(searchKeyword)
-    .then(rawKeywords => {
-      const keywords = rawKeywords
-        .rows
-        .map(row=>row.keywords.split(','))
-        .reduce((a,b)=>[...a,...b],[])
-        .map(keyword=>keyword.trim())
-        .sort()
-        .filter((el, i, a) => a.indexOf(el) === i) //Unique in array https://stackoverflow.com/questions/1960473/unique-values-in-an-array
-
-      // var keywordsStrings = []
-      // keywords.forEach(keywordsArray=>{
-      //   keywordsStrings = [...keywordsStrings, ...keywordsArray]
-      //   keywordsStrings.concat(keywordsArray)
-      // })
-
-      res.status(200).send({
-        query: "Unit",
-        suggestions: keywords
-      })
-    })
-    .catch(err => {
-      console.log('error with getKeywords in router');
-      console.log(err)
-      res.status(500).send(err)
-    })
-})
-
 router.post('/add-resource', (req, res) => {
   const sanitizedUrl = sanitizeUrl(req.body.url);
 
@@ -87,7 +54,25 @@ router.post('/add-resource', (req, res) => {
   )
   .catch(err => {
     console.log("problem with the database: ", err)
-  })
+
+
+  // console.log("querystring parse", querystring.parse(reqUrl));
+
+  // const url = querystring.parse(reqUrl)['/add-resource?url'];
+  // const title = querystring.parse(reqUrl).title;
+  // const sanitizedUrl = sanitizeUrl(url);
+  //
+  // ifUrlExists(sanitizedUrl)
+  // .then(response => {
+  //   if (response.rowCount > 0) throw new Error('URL already exists')
+  //   else {
+  //     postData(sanitizedUrl, title)
+  //   }
+  // })
+  // .then(console.log('success'))
+  // .catch(err => {
+  //   console.log("problem with the database: ", err)
+  // })
 });
 
 module.exports = router;
