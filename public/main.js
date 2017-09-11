@@ -18,7 +18,6 @@ var submit = document.getElementById('submit');
   }
 
   function renderDom(data) {
-    console.log(data);
     var section = document.getElementById('resourceDB')
     data.forEach(function(item) {
       var point = document.createElement("li");
