@@ -9,7 +9,6 @@ const addresourcesext = require('./addresourcesext');
 const error = require('./error');
 
 router.get('/', home);
-// router.get('/get-resource', getresources);
 router.get('/search', search);
 router.post('/add-resource-ext', addresourcesext, addresources);
 router.post('/add-resource', addresources);

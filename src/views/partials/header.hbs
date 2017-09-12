@@ -1,11 +1,34 @@
-<header id="top-navbar">
+<header id="header">
   <a href="/"><img src="images/logo.png" height="50" /></a>
-  <a href="/"><h1>FAC Share</h1>
-      <section id="search"></a>
-  <form id="searchform" action="/search">
-    <input id="searchinput" placeholder="search everything" type="text" name="input">
-    <img id="search-icon" src="images/search.png" height="50" />
-  </form>
+  <a href="/"><h1>FAC Share</h1></a>
+  <section id="search">
+    <form id="searchform" action="/search">
+      <input id="searchinput" placeholder="search everything" type="text" name="input">
+      <a href="#"><img id="search-icon" src="images/search.png" height="50" /></a>
+    </form>
   </section>
-  <div id="plus">+</div>
+  <a href="#" id="plus"><img class="plus_image" src="images/plus.svg"/></a>
 </header>
+
+<!-- ADD RESOURCE WINDOW -->
+
+<section id="modal-background" class="hidden">
+  <div class="modal">
+
+    <h2 class="addResourceHeader">Add a resource:
+      <a href="#" id="close"><img src="images/plus.svg"/></a href="#">
+    </h2>
+
+    <form id="addForm" action="/add-resource" method="POST">
+      <label for="url">URL:</label>
+      <input id="url" name="url" type="text"><br>
+      <label for="title">Title:</label>
+      <input id="title" name="title" type="text"></br>
+      <label for="keywords">Keywords:</label>
+      <input id="keywords" name="keywords" type="text"></br>
+      <div class="text-center">
+        <button class="btn" id="submit" type="submit">Add a resource</button>
+      </div>
+    </form>
+  </div>
+</section>

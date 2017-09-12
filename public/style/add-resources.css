@@ -1,0 +1,79 @@
+/*----------POP UP WINDOW ----------*/
+#modal-background {
+  background: rgba(0, 0, 0, 0.41);
+  position: absolute;
+  top:0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  animation: background 0.5s ease-in;
+}
+
+.modal {
+  position: absolute;
+  z-index: 10;
+  background-color: white;
+  width: 30%;
+  right: 0;
+  padding: 20px;
+  top:0;
+  animation: top 0.5s ease-out;
+}
+
+@keyframes background {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes top {
+  0%   { top: -300px; }
+  100% { top: 0; }
+}
+
+/*---------- CLOSE BUTTON ----------*/
+
+#close {
+  transform: rotate(90deg);
+  float: right;
+}
+
+#close img {
+  height: 15px;
+}
+
+/*----------HEADER----------*/
+
+.addResourceHeader {
+  color: #008C97;
+}
+
+.addResourceHeader:after {
+  content:' ';
+  display:block;
+  padding-top: 10px;
+  border-bottom:2px solid #008C97;
+}
+
+/*---------- FORM ----------*/
+
+#addForm {
+  font-size: 20px;
+}
+
+#addForm .btn{
+  margin-top: 10px;
+  padding: 3%;
+  background-color: #42C1CB;
+  color: white;
+  border: 0;
+  font-size: 20px;
+  cursor:pointer;
+}
+
+#addForm label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  margin-bottom: 20px;
+}

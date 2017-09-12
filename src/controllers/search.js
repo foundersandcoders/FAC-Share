@@ -5,7 +5,6 @@ module.exports = (req, res) => {
   searchData(searchquery)
     .then(results => {
       let output = results.rows;
-      console.log("I'm the search output  ", output);
       res.render('home', {output});
     })
 
