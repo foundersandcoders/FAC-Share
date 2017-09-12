@@ -1,0 +1,148 @@
+html, body {
+  margin:0;
+  padding:0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #F6F8F8;
+  padding-top: 100px;
+}
+
+li {
+  display: block;
+  list-style: none;
+  margin-left: 10%;
+  width: 80%;
+  text-align: center;
+  height: auto;
+  background-color: white;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+p {
+  background-color: #ECECEC;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+a {
+  display: block;
+}
+
+a:link {
+  color: #008C97;
+  text-decoration: none;
+}
+
+/* --------UTILITIES_------*/
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/*-------------INPUT-------------*/
+input {
+  font-size: 20px;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*----------BUTTON----------*/
+.btn {
+  padding: 5px 10px;
+  background-color: #42C1CB;
+  color: white;
+  border: 0;
+  font-size: 25px;
+}
+
+/*----------MODAL----------*/
+.modal-background {
+  background: rgba(0, 0, 0, 0.41);
+  position: absolute;
+  top:0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.modal {
+  position: absolute;
+  z-index: 10;
+  background-color: white;
+  width: 40%;
+  right: 0;
+  padding: 20px;
+}
+
+#close {
+  transform: rotate(45deg);
+	transform-origin: left top 0;
+  float: right;
+}
+
+/*----------TOP-NAVABAR----------*/
+#top-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 20px;
+  text-align: center;
+}
+
+#top-navbar img{
+  vertical-align: middle;
+  margin-right: 10px;
+  display: inline-block;
+  float: left;
+}
+
+#top-navbar h1{
+  color: #008C97;
+  font-weight: 800;
+  font-size: 30px;
+  display: inline;
+  vertical-align: middle;
+  float: left;
+  margin:0;
+  padding-top: 7px;
+}
+
+#plus{
+  font-size: 40px;
+  float: right;
+}
+
+#search {
+  display: inline-block;
+  width: 60%;
+  position: relative;
+}
+
+#search input{
+  width: 100%;
+  padding: 10px;
+}
+
+#search-icon {
+  display: inline-block;
+  position: absolute;
+  right: -20px;
+  top: 2px;
+  height: 35px;
+}
+
+/* Add form */
+#addForm .btn{
+  margin-top: 10px;
+}
