@@ -16,6 +16,7 @@ module.exports = (req, res) => {
       res.redirect('/');
     })
     .catch(err => {
-      console.log("Problem with the database: ", err)
+      console.log("Problem with the database: ", err);
+      res.redirect('/');
     })
 }

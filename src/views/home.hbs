@@ -1,28 +1,32 @@
-<section id="search">
-  <form id="searchform" action="/search">
-    <input id="searchinput" placeholder="search everything" type="text" name="searchinput">
-    <button id="submitsearch" type="submit">Search</button>
-  </form>
-</section>
-
 <section id="searchResults">
 
 </section>
 
-<section id="addResource">
-  <h2>Add a resource:</h2>
+<section id="modal-wrapper" class="modal-background hidden">
+  <div class="modal" id="addResource">
+    <div id="close">+</div>
+    <h2>Add a resource:</h2>
 
-  <form id="addForm" action="/add-resource" method="POST">
-    <label for="url">URL:</label>
-    <input id="url" name="url" type="text"><br>
-    <label for="title">Title:</label>
-    <input id="title" name="title" type="text"></br>
-    <label for="keywords">Keywords:</label>
-    <input id="keywords" name="keywords" type="text"></br>
-    <button id="submit" type="submit">Add a resource</button>
-  </form>
+    <form id="addForm" action="/add-resource" method="POST">
+      <label for="url">URL:</label>
+      <input id="url" name="url" type="text"><br>
+      <label for="title">Title:</label>
+      <input id="title" name="title" type="text"></br>
+      <label for="keywords">Keywords:</label>
+      <input id="keywords" name="keywords" type="text"></br>
+      <div class="text-center">
+        <button class="btn" id="submit" type="submit">Add a resource</button>
+      </div>
+    </form>
+  </div>
 </section>
 
 <section id="resourceDB">
-
+  {{#each output}}
+    something else here
+    <li>
+      <a href="{{this.url}}">{{this.title}}</a>
+      <p>{{this.keywords}}</p>
+    </li>
+  {{/each}}
 </section>
