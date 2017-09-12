@@ -34,16 +34,33 @@ var submit = document.getElementById('submit');
 
 })()
 
+document.getElementById('plus').addEventListener("click", function(event) {
+  document.getElementById("modal-wrapper").classList.toggle("hidden");
+
+})
+
+document.getElementById('close').addEventListener("click", function(event) {
+  document.getElementById("modal-wrapper").classList.toggle("hidden");
+})
+
 document.getElementById('searchform').addEventListener("submit", function(event) {
+  searchmanipulation();
+})
+
+document.getElementById("search-icon").addEventListener("click", function(event) {
+  searchmanipulation();
+})
+
+function searchmanipulation () {
   event.preventDefault();
   var searchquery = document.getElementById("searchinput").value;
   console.log("I am searchquery:  ", searchquery);
   var url = "/search" + "?" + searchquery;
   httpRequest(url, "GET", renderSearchResults);
-})
-
+}
 function renderSearchResults(data) {
   var section = document.getElementById('searchResults')
+  console.log("i am search data ", data);
   data.forEach(function(item) {
     var point = document.createElement("li");
     var newAnchor = document.createElement("a");
@@ -63,7 +80,7 @@ var httpRequest = function(url, type, cb) {
     if (xhr.readyState === 4 && xhr.status === 200) {
       var data = JSON.parse(xhr.responseText);
       cb(data);
-    } else {
+    } else if (xhr.status >= 400) {
       cb('error ' + xhr.responseType);
     }
   }

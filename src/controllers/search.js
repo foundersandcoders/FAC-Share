@@ -5,13 +5,14 @@ module.exports = (req, res) => {
   searchData(searchquery)
     .then(results => {
       let output = JSON.stringify(results.rows);
-      console.log("I am response from searchData: ", results.rows);
       res.writeHead(200, {
         'content-type': 'application/json'
       });
+      console.log("im search output  ", output);
       res.end(output);
     })
+
     .catch(err => {
-      console.log("error with searchData in router");
+      console.log("error with searchData in router", err);
     })
 }
