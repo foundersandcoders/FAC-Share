@@ -3,7 +3,7 @@ const dbConnection = require('../database/dbConnection.js');
 const searchData = (searchquery) => {
 
   // remove spaces
-  searchquery = searchquery.split('%20').join(' ');
+  searchquery = searchquery.split('+').join(' ');
 
   // add | for sql
   searchquery = searchquery.split(' ').join(' | ');
