@@ -32,7 +32,7 @@
 
 #search {
   display: inline-block;
-  width: 50%;
+  width: 40%;
   position: relative;
 }
 
@@ -52,7 +52,7 @@
 /*-----PLUS BUTTON----*/
 
 #plus {
-  font-size: 40px;
+  font-size: 4rem;
   float: right;
   cursor:pointer;
 }
@@ -61,4 +61,15 @@
   height: 25px;
   transform: rotate(45deg);
   padding-top: 10px;
+}
+
+/* Portrait and Landscape */
+@media only screen and (max-device-width: 480px) {
+  #header h1 {
+    display: none;
+  }
+
+  #search {
+    width: 60%;
+  }
 }

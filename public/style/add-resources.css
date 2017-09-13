@@ -1,7 +1,7 @@
 /*----------POP UP WINDOW ----------*/
 #modal-background {
   background: rgba(0, 0, 0, 0.41);
-  position: absolute;
+  position: fixed;
   top:0;
   bottom: 0;
   right: 0;
@@ -16,7 +16,7 @@
   background-color: white;
   width: 30%;
   right: 0;
-  padding: 20px;
+  padding: 2rem;
   top:0;
   animation: top 0.5s ease-out;
 }
@@ -29,6 +29,15 @@
 @keyframes top {
   0%   { top: -300px; }
   100% { top: 0; }
+}
+
+
+@media only screen and (max-device-width: 480px) {
+  .modal {
+    width: auto;
+    left: 0;
+    right: 0;
+  }
 }
 
 /*---------- CLOSE BUTTON ----------*/
@@ -51,18 +60,19 @@
 .addResourceHeader:after {
   content:' ';
   display:block;
-  padding-top: 10px;
+  padding-top: 0.7rem;
   border-bottom:2px solid #008C97;
+  margin-bottom: 2rem;
 }
 
 /*---------- FORM ----------*/
 
 #addForm {
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 
 #addForm .btn{
-  margin-top: 10px;
+  margin-top: 1.5rem;
   padding: 3%;
   background-color: #42C1CB;
   color: white;
@@ -73,7 +83,17 @@
 
 #addForm label {
   display: inline-block;
-  width: 100px;
+  width: 8rem;
   text-align: right;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+}
+
+#url, #title, #keywords {
+  width: 25rem;
+}
+
+@media only screen and (max-device-width: 480px) {
+  #url, #title, #keywords {
+    width: 10rem;
+  }
 }
