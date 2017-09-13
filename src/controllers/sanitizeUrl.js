@@ -1,9 +1,6 @@
 function sanitizeLink(url) {
 
-  // remove '/' at if exists at end
-  if (url[url.length - 1] === '/') {
-      url = url.slice(0, url.length - 1);
-  }
+
 
   // remove https://
    if (url.slice(0,8) === 'https://') {
@@ -18,6 +15,11 @@ function sanitizeLink(url) {
   // remove 'www'
   if (url.slice(0,4) === 'www.') {
     url = url.slice(4);
+  }
+
+  // remove '/' at if exists at end
+  if (url[url.length - 1] === '/') {
+      url = url.slice(0, url.length - 1);
   }
   return url;
 }

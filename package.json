@@ -10,7 +10,7 @@
     "start": "node src/index.js",
     "start:watch": "nodemon src/index.js",
     "coverage": "istanbul cover tests/*.tests.js",
-    "test": "NODE_ENV=test tape tests/*.tests.js | tap-spec"
+    "test": "NODE_ENV=test nyc istanbul cover tape tests/*.tests.js | tap-spec"
   },
   "repository": {
     "type": "git",
