@@ -89,7 +89,7 @@
 }
 
 #url, #title, #keywords {
-  width: 25rem;
+  width: 15rem;
 }
 
 @media only screen and (max-device-width: 480px) {
