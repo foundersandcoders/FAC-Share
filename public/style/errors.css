@@ -1,0 +1,17 @@
+.error {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.error__desc {
+  display: block;
+  background-color: inherit;
+  font-size: 24px;
+  padding: 1%;
+  font-weight: bold;
+}
+
+.error__image {
+  width: 40%;
+  padding: 20px;
+}

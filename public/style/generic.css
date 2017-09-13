@@ -1,0 +1,40 @@
+html, body {
+  margin:0;
+  padding:0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #F6F8F8;
+  padding-top: 100px;
+  margin-bottom: 50px;
+  color: #333;
+}
+
+li {
+  display: block;
+  list-style: none;
+  margin-left: 20%;
+  width: 60%;
+  text-align: center;
+  height: auto;
+  background-color: white;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+p {
+  background-color: #ECECEC;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+a {
+  display: block;
+}
+
+a:link {
+  color: #008C97;
+  text-decoration: none;
+}

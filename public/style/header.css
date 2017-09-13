@@ -1,0 +1,64 @@
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/*----LOGO-----*/
+
+#header img{
+  vertical-align: middle;
+  margin-right: 10px;
+  display: inline-block;
+  float: left;
+}
+
+#header h1{
+  color: #008C97;
+  font-weight: 800;
+  font-size: 30px;
+  display: inline;
+  vertical-align: middle;
+  float: left;
+  margin:0;
+  padding-top: 7px;
+}
+
+/*----SEARCH INPUT-----*/
+
+#search {
+  display: inline-block;
+  width: 50%;
+  position: relative;
+}
+
+#search input{
+  width: 100%;
+  padding: 10px;
+}
+
+#search-icon {
+  display: inline-block;
+  position: absolute;
+  right: -20px;
+  top: 2px;
+  height: 35px;
+}
+
+/*-----PLUS BUTTON----*/
+
+#plus {
+  font-size: 40px;
+  float: right;
+  cursor:pointer;
+}
+
+#plus .plus_image {
+  height: 25px;
+  transform: rotate(45deg);
+  padding-top: 10px;
+}

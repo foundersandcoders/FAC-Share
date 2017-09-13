@@ -1,0 +1,14 @@
+<svg width="28" height="28" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ignore icon</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="matrix(2 0 0 2 -4384 -16)">
+<g id="ignore icon">
+<g id="shape" opacity="0.54">
+<use xlink:href="#path0_fill" transform="translate(2192 8)"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 7 5.586L 1.414 0L 0 1.414L 5.585 7L 0 12.586L 1.414 14L 7 8.414L 12.586 14L 13.999 12.586L 8.414 7L 13.999 1.414L 12.586 0L 7 5.586Z"/>
+</defs>
+</svg>
