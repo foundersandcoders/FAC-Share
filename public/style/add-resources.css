@@ -1,7 +1,7 @@
 /*----------POP UP WINDOW ----------*/
 #modal-background {
   background: rgba(0, 0, 0, 0.41);
-  position: absolute;
+  position: fixed;
   top:0;
   bottom: 0;
   right: 0;
@@ -16,7 +16,7 @@
   background-color: white;
   width: 30%;
   right: 0;
-  padding: 20px;
+  padding: 2rem;
   top:0;
   animation: top 0.5s ease-out;
 }
@@ -51,18 +51,19 @@
 .addResourceHeader:after {
   content:' ';
   display:block;
-  padding-top: 10px;
+  padding-top: 0.7rem;
   border-bottom:2px solid #008C97;
+  margin-bottom: 2rem;
 }
 
 /*---------- FORM ----------*/
 
 #addForm {
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 
 #addForm .btn{
-  margin-top: 10px;
+  margin-top: 1.5rem;
   padding: 3%;
   background-color: #42C1CB;
   color: white;
@@ -73,7 +74,66 @@
 
 #addForm label {
   display: inline-block;
-  width: 100px;
+  width: 8rem;
   text-align: right;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+}
+
+#url, #title, #keywords {
+  width: 70%;
+}
+
+@media only screen and (max-device-width: 1531px) {
+  .modal {
+    width: 40%
+  }
+}
+
+@media only screen and (max-device-width: 1143px) {
+  .modal {
+    width: 50%
+  }
+}
+
+@media only screen and (max-device-width: 911px) {
+  .modal {
+    width: 60%
+  }
+}
+
+@media only screen and (max-device-width: 760px) {
+  .modal {
+    width: 70%
+  }
+}
+
+@media only screen and (max-device-width: 651px) {
+  .modal {
+    width: 80%
+  }
+}
+
+@media only screen and (max-device-width: 570px) {
+  #url, #title, #keywords {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-device-width: 428px) {
+  #url, #title, #keywords {
+    width: 50%;
+  }
+  #addForm label {
+    width: 20%;
+  }
+}
+
+@media only screen and (max-device-width: 320px) {
+  #url, #title, #keywords {
+    width: 50%;
+  }
+  #addForm label {
+    font-size: 1rem;
+    width: 30%;
+  }
 }
