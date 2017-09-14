@@ -8,10 +8,12 @@ const verifyurlext = require('./verifyurlext');
 const ifinputempty = require('./ifinputempty');
 const urlvalidation = require('./urlvalidation');
 const addresourcesext = require('./addresourcesext');
+const removeentry = require('./removeentry');
 const error = require('./error');
 
 router.get('/', home);
 router.get('/search', search);
+router.get('/delete/:id', removeentry)
 router.post('/add-resource-ext', addresourcesext, ifinputempty, verifyurlext);
 router.post('/add-resource', ifinputempty, urlvalidation, addresources);
 
