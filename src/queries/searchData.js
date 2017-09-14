@@ -1,6 +1,4 @@
-const dbConnection = require('../database/dbConnection.js');
-
-const searchData = (searchquery) => {
+const searchData = (searchquery, dbConnection) => {
 
   // remove spaces
   searchquery = searchquery.split('+').join(' ');

@@ -1,7 +1,8 @@
 const getData = require('../queries/getData.js');
+const dbConnection = require('../database/dbConnection.js');
 
 module.exports = (req, res) => {
-  getData()
+  getData(dbConnection)
     .then(results => {
       const output = results.rows;
       res.render('home', {output})

@@ -1,6 +1,4 @@
-const dbConnection = require('../database/dbConnection.js');
-
-const getData = () => {
+const getData = (dbConnection) => {
   return dbConnection.query(`SELECT * FROM resources`)
 }
 

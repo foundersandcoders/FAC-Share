@@ -19,6 +19,7 @@ const sanitizeLink = require('../src/controllers/sanitizeUrl.js');
 const addresourcesext = require('../src/controllers/addresourcesext.js');
 const supertest = require('supertest');
 const app = require('../src/app.js');
+const test_dbConnection = require('./database/test_dbConnection.js');
 
 test('tape is working', (t) => {
   t.equals(1, 1, 'one equals one');
@@ -81,16 +82,12 @@ test('sanitizeUrl', (t) => {
 const getData = require('../src/queries/getData.js');
 
 test('getData', (t) => {
-  getData()
+  getData(test_dbConnection)
     .then(raw=>{
-      // Checking total count
-      t.equals(raw.rows.length, 2, 'Expect 2 results')
-
-      // Checking first record
+      t.equals(raw.rows.length, 4, 'Expect 4 results')
       const firstResult = raw.rows[0]
       t.equals(firstResult.title, 'Callback HELL', 'Title of the first result should be Callback Hell')
-      t.equals(firstResult.url, 'http://callbackhell.com/', 'Url of the first result should be Callback Hell website')
-
+      t.equals(firstResult.url, 'callbackhell.com', 'Url of the first result should be Callback Hell website')
       t.end()
     })
     //when test fails there is no way to see that with catch, that's why we specify t.fail to fail the test in case of a problem
@@ -100,12 +97,12 @@ test('getData', (t) => {
 const { postData } = require('../src/queries/postData.js');
 
 test('postData', (t) => {
-  postData('www.penguin.com', 'Penguin', 'special, bird')
+  postData('www.penguin.com', 'Penguin', 'special, bird', test_dbConnection)
     .then(res=>{
-      getData()
+      getData(test_dbConnection)
         .then(raw=>{
-          const input = raw.rows[2]
-          t.equals(raw.rows.length, 3, 'Expect 1 additional result after insertion')
+          const input = raw.rows[4]
+          t.equals(raw.rows.length, 5, 'Expect 1 additional result after insertion')
           t.equals(input.title, 'Penguin', 'Title of the input resource should be Penguin')
           t.equals(input.url, 'www.penguin.com', 'Url of the input resource should be penguin.com')
           t.end()
@@ -118,7 +115,7 @@ test('postData', (t) => {
 const searchData = require('../src/queries/searchData.js');
 
 test('searchData', (t) => {
-  searchData('Async')
+  searchData('Theroux', test_dbConnection)
     .then(raw=>{
       t.equals(raw.rowCount, 1, 'Expect 1 result from searchData')
       t.end()

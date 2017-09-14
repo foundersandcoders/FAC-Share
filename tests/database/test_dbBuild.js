@@ -7,7 +7,7 @@ const sql = fs.readFileSync(`${__dirname}/test_dbBuild.sql`).toString();
 const runDbBuild = dbConnection.query(sql)
   .then(res => {
     // console.log("Database created with the result:  ", res);
-    console.log("Database created");
+    console.log("Test Database created");
   })
   .catch(err=>{
     console.log(err)
