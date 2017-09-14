@@ -4,13 +4,11 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
   var urlElement = document.getElementById('url')
   var titleElement = document.getElementById('title');
   var keywordsElement = document.getElementById('keywords');
-  var status = document.getElementById('status');
   urlElement.value = tabs[0].url;
   titleElement.value = tabs[0].title;
 
   document.getElementById('submit').addEventListener('click', function() {
     chrome.tabs.sendMessage(tabs[0].id, {url : tabs[0].url, title: tabs[0].title, keywords: keywordsElement.value}, function(response) {
-      status.textContent = response.message;
       // do something with response
     });
   })

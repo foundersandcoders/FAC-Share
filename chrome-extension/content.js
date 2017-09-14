@@ -8,36 +8,19 @@ chrome.runtime.onMessage.addListener(
     var finalUrl = 'https://fac-share.herokuapp.com/add-resource-ext' + '?' + 'url=' + url + '&title=' + title + '&keywords=' + keywords;;
 
     var xhr = new XMLHttpRequest();
-
     xhr.onreadystatechange = function() {
       if (xhr.readyState === 4 && xhr.status === 200) {
         console.log(xhr.responseText);
-        var response = JSON.parse(xhr.responseText)
-        console.log(response);
-        console.log(response.message);
-
-        console.log('response: ', response);
-        sendResponse(response);
-
-        // if (response) {
-        //   sendResponse(response);
-        //   // var feedback = window.getElementById('feedback');
-        //   // console.log(feedback);
-        //   // feedback.innerHTML(response.message)
-        // } else {
-        //
-        //   console.log(xhr.responseType);
-        // }
       } else {
         console.log(xhr.responseType);
       }
-      xhr.open("POST", finalUrl, true);
-      xhr.send();
-
     }
-  }
-)
+    xhr.open("POST", finalUrl, true);
+    xhr.send();
 
+    sendResponse({});
+
+  });
 
 document.addEventListener('DOMContentLoaded', function() {
   var links = document.getElementsByTagName("a");
