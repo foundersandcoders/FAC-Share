@@ -45,8 +45,8 @@
   display: inline-block;
   position: absolute;
   right: -20px;
-  top: 2px;
-  height: 35px;
+  top: 10px;
+  height: 1.5rem;
 }
 
 /*-----PLUS BUTTON----*/
@@ -63,13 +63,55 @@
   padding-top: 10px;
 }
 
-/* Portrait and Landscape */
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 890px) {
   #header h1 {
     display: none;
   }
 
+  #search-icon {
+    height: 1.5rem;
+    right: -27px;
+    top: 11px;
+  }
+
+}
+
+@media only screen and (max-device-width: 580px) {
+
+  #plus .plus_image {
+    height: 15px;
+    padding-top: 19px;
+  }
+  #search input{
+    font-size: 15px;
+  }
+  #search-icon {
+    height: 15px;
+    top: 12px;
+  }
+
+}
+
+@media only screen and (max-device-width: 580px) {
+
   #search {
-    width: 60%;
+    width: 50%;
+  }
+
+}
+
+@media only screen and (max-device-width: 320px) {
+  #search-icon {
+    height: 20px;
+    top: 9px;
+    right: -9px;
+  }
+
+  #search {
+    width: 55%;
+  }
+
+  #header img {
+    margin-right: 0;
   }
 }
