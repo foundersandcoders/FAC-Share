@@ -10,13 +10,13 @@
     "start": "node src/index.js",
     "start:watch": "nodemon src/index.js",
     "coverage": "istanbul cover tests/*.tests.js",
-    "test": "DATABASE_URL=postgres://stefano:hello@localhost:5432/test NODE_ENV=test nyc istanbul cover tape tests/*.tests.js | tap-spec"
+    "test": "nyc istanbul cover tape tests/*.test.js | tap-spec"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/azayneeva/FAC-Share.git"
   },
-  "author": "Abdullah and Alina",
+  "author": "Abdullah, Alina and Stefano",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/azayneeva/FAC-Share/issues"

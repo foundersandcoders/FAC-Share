@@ -6,7 +6,8 @@ CREATE TABLE resources (
   id SERIAL PRIMARY KEY,
   title TEXT NOT NULL,
   url TEXT NOT NULL,
-  keywords TEXT
+  keywords TEXT,
+  searchtext TSVECTOR
 );
 
 INSERT INTO resources (title, url, keywords) VALUES
@@ -16,7 +17,7 @@ INSERT INTO resources (title, url, keywords) VALUES
 ('An opinionated guide to writing developer resumes in 2017',
 'medium.freecodecamp.org/how-to-write-a-good-resume-in-2017-b8ea9dfdd3b9', 'developer, guide, resume');
 
-ALTER TABLE resources ADD COLUMN searchtext TSVECTOR;
+-- ALTER TABLE resources ADD COLUMN searchtext TSVECTOR;
 
 UPDATE resources SET searchtext = to_tsvector('english', title || ' ' || keywords);
 
