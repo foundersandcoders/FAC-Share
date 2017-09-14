@@ -10,7 +10,7 @@
     "start": "node src/index.js",
     "start:watch": "nodemon src/index.js",
     "coverage": "istanbul cover tests/*.tests.js",
-    "test": "NODE_ENV=test tape tests/*.tests.js | tap-spec"
+    "test": "DATABASE_URL=postgres://stefano:hello@localhost:5432/test NODE_ENV=test nyc istanbul cover tape tests/*.tests.js | tap-spec"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,8 @@
   "devDependencies": {
     "istanbul": "^0.4.5",
     "nodemon": "^1.12.0",
+    "nyc": "^11.2.1",
+    "redtape": "^1.0.0",
     "supertest": "^3.0.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.8.0",
