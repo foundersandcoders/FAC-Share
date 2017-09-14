@@ -14,7 +14,7 @@ document.getElementById('submit').addEventListener("click", function(event) {
   } else if (ifTitleEmpty == 0) {
     alert("You haven't added title!")
     event.preventDefault();
-  } 
+  }
 })
 
 document.getElementById('close').addEventListener("click", function(event) {
