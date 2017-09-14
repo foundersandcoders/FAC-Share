@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const router = require('./controllers/router.js');
+const helpers = require('./views/helpers/index');
 const exphbs = require('express-handlebars');
 const bp = require('body-parser');
 const app = express();
@@ -14,7 +15,8 @@ app.engine(
     extname: 'hbs',
     layoutsDir: path.join(__dirname, 'views', 'layouts'),
     partialsDir: path.join(__dirname, 'views', 'partials'),
-    defaultLayout: 'main'
+    defaultLayout: 'main',
+    helpers: helpers
   })
 )
 

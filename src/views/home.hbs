@@ -4,7 +4,10 @@
 <section id="resourceDB">
   {{#each output}}
     <li>
-      <a target="_blank" href="http://{{this.url}}">{{this.title}}</a>
+      <a target="_blank" href="http://{{this.url}}">{{capitalise this.title}}</a>
+      <form method="get" action="/delete/{{this.id}}">
+        <button type="submit"><img src="./images/trash.png" alt=""></button>
+      </form>
       <p>{{this.keywords}}</p>
     </li>
   {{/each}}
