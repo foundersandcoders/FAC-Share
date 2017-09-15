@@ -19,7 +19,7 @@
 
 #header h1{
   color: #008C97;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 30px;
   display: inline;
   vertical-align: middle;
@@ -39,6 +39,7 @@
 #search input{
   width: 100%;
   padding: 10px;
+  border-bottom-color: #DCE0E1;
 }
 
 #search-icon {
