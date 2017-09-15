@@ -6,3 +6,7 @@ input {
   border-top-width: 0;
   font-family: 'Montserrat', sans-serif;
 }
+
+#url, #title, #keywords::placeholder {
+  padding-left: 3%;
+}

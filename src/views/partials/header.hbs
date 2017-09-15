@@ -21,11 +21,11 @@
 
     <form id="addForm" action="/add-resource" method="POST">
       <label for="url">URL:</label>
-      <input id="url" name="url" type="text" required><br>
+      <input id="url" name="url" type="text" placeholder="e.g., http://callbackhell.com/" required><br>
       <label for="title">Title:</label>
-      <input id="title" name="title" type="text" required></br>
+      <input id="title" name="title" type="text" placeholder="e.g., Callback Hell" required></br>
       <label for="keywords">Keywords:</label>
-      <input id="keywords" name="keywords" type="text"></br>
+      <input id="keywords" name="keywords" type="text" placeholder="e.g., callback, promise, ES6"></br>
       <div class="text-center">
         <button class="btn" id="submit" type="submit">Add a resource</button>
       </div>
