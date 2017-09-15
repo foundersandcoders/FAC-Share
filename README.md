@@ -1,4 +1,5 @@
 ## FAC SHARE
+[![Build Status](https://travis-ci.org/azayneeva/FAC-Share.svg?branch=master)](https://travis-ci.org/azayneeva/FAC-Share)
 
 A resource sharing and discovery platform for FACers
 
