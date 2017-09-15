@@ -3,7 +3,7 @@ const ifUrlExists = (url, dbConnection) => {
 }
 
 const postData = (url, title, keywords, dbConnection) => {
-  dbConnection.query(`INSERT INTO resources (url, title, keywords) VALUES ($1, $2, $3)`, [url, title, keywords]);
+  dbConnection.query(`INSERT INTO resources (url, title, keywords) VALUES ($1, $2, $3) RETURNING ID`, [url, title, keywords]);
   return dbConnection.query(`UPDATE resources SET searchtext = to_tsvector('english', title || ' ' || keywords)`)
 }
 
