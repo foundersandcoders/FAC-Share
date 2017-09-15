@@ -135,7 +135,7 @@ test('router.js/', (t) => {
 
 test('router.js/search', (t) => {
   supertest(app)
-    .get('/search')
+    .get('/search?input=callback')
     .end((err, res) => {
       t.same(res.statusCode, 200, 'Status code is 200');
       t.error(err, 'No error');
@@ -145,7 +145,7 @@ test('router.js/search', (t) => {
 
 test('router.js/add-resource-ext', (t) => {
   supertest(app)
-    .get('/add-resource-ext')
+    .post('/add-resource-ext?url=')
     .end((err, res) => {
       t.same(res.statusCode, 200, 'Status code is 200');
       t.error(err, 'No error');
@@ -153,12 +153,15 @@ test('router.js/add-resource-ext', (t) => {
     })
 })
 
-test('router.js/add-resource', (t) => {
-  supertest(app)
-    .get('/add-resource')
-    .end((err, res) => {
-      t.same(res.statusCode, 200, 'Status code is 200');
-      t.error(err, 'No error');
-      t.end();
-    })
-})
+// test('router.js/add-resource', (t) => {
+//   const newLink = JSON.stringify({'url': 'http://www.test.com', 'title': "test", 'keywords': ''});
+//   console.log(newLink);
+//   supertest(app)
+//     .post('/add-resource')
+//     .send(newLink)
+//     .end((err, res) => {
+//       t.same(res.statusCode, 200, 'Status code is 200');
+//       t.error(err, 'No error');
+//       t.end();
+//     })
+// })
