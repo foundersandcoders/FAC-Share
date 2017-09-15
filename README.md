@@ -5,6 +5,7 @@ A resource sharing and discovery platform for FACers
 
 ## LINKS
 To Heroku: https://fac-share.herokuapp.com/
+
 To the chrome store: https://chrome.google.com/webstore/detail/fac-share/knnjpbefodpffppbnafpnlopdghenepn
 
 ## WHY
